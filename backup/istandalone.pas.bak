@@ -47,7 +47,7 @@ end;
 var
   Application: TISA;
 begin
-  Application := TISA.Create(nil);
+  Application:=TISA.Create(nil);
   Application.Title := 'ISA';
   Application.Run;
   Application.Free;
