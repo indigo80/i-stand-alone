@@ -101,7 +101,7 @@ end;
 
 procedure TSprite._SetAngle(Value: Single);
 begin
-
+  _Angle := Value;
 end;
 
 constructor TSprite.Create(const gfxDir: string);

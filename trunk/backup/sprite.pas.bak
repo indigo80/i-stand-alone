@@ -91,7 +91,7 @@ end;
 
 procedure TSprite._SetAlpha(Value: Byte);
 begin
-
+  _Alpha := Value;
 end;
 
 procedure TSprite._SetVisible(Value: Boolean);
