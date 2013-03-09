@@ -9,10 +9,11 @@
         <Filename Value="istandalone.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="istandalone"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="41" Y="12"/>
+        <TopLine Value="16"/>
+        <CursorPos X="4" Y="27"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -20,11 +21,10 @@
         <Filename Value="engine.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="engine"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="97"/>
-        <CursorPos X="17" Y="115"/>
+        <TopLine Value="91"/>
+        <CursorPos X="11" Y="102"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit1>
