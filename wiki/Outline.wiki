@@ -11,6 +11,7 @@
 
 
 == Scene ==
+  * SceneManager klasa
   * BaseScene klasa
   * TitleScene klasa
   * OptionsScene klasa
@@ -53,6 +54,12 @@ Treba da sadrzi funkcije za upravljanje, kreiranje servera/klienata i direknu in
 == Tilemap klasa ==
 
 Treba da sadrzi funkcije za prikazivanje mape, sirina, visina, x, y, i layere (listu sprite-ova) za prikazivanje.
+
+[ Dodjeljeno - ?? ]
+
+== SceneManager klasa ==
+
+Klasa koja je menadzer svih scena i izvrsava trenutnu scenu i vrsi prebacivanje scena.
 
 [ Dodjeljeno - ?? ]
 
