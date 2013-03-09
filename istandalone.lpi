@@ -32,7 +32,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="2">
+    <Units Count="3">
       <Unit0>
         <Filename Value="istandalone.pas"/>
         <IsPartOfProject Value="True"/>
@@ -43,6 +43,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="engine"/>
       </Unit1>
+      <Unit2>
+        <Filename Value="sprite.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="sprite"/>
+      </Unit2>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -53,7 +58,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="third-party\zengl;third-party\zengl\lib\ogg\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\zip\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\zlib\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\theora\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\msvcrt\$(TargetCPU)"/>
+      <OtherUnitFiles Value="third-party\zengl;third-party\zengl\lib\ogg\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\zip\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\zlib\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\theora\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\msvcrt\$(TargetCPU);third-party\zengl\lib\jpeg\$(TargetCPU)-$(TargetOS)"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Other>
