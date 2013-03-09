@@ -4,16 +4,16 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="6">
+    <Units Count="10">
       <Unit0>
         <Filename Value="istandalone.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="istandalone"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="41" Y="12"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="39"/>
+        <CursorPos X="1" Y="60"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,9 +23,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="97"/>
-        <CursorPos X="17" Y="115"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="103"/>
+        <CursorPos X="12" Y="104"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
@@ -60,87 +60,112 @@
         <CursorPos X="35" Y="169"/>
         <UsageCount Value="10"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="sprite.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="sprite"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="85"/>
+        <CursorPos X="19" Y="94"/>
+        <UsageCount Value="23"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="third-party\zengl\zgl_render_target.pas"/>
+        <UnitName Value="zgl_render_target"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="4" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\lazarus\package\zengl-src-0.3.7\demos\FreePascal\07 - Sprites\demo07.pas"/>
+        <UnitName Value="demo07"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="229"/>
+        <CursorPos X="2" Y="241"/>
+        <UsageCount Value="11"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="third-party\zengl\zgl_sprite_2d.pas"/>
+        <UnitName Value="zgl_sprite_2d"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="284"/>
+        <CursorPos X="1" Y="294"/>
+        <UsageCount Value="10"/>
+      </Unit9>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="19" HistoryIndex="18">
+    <JumpHistory Count="17" HistoryIndex="16">
       <Position1>
-        <Filename Value="engine.pas"/>
-        <Caret Line="12" Column="22" TopLine="4"/>
+        <Filename Value="istandalone.pas"/>
+        <Caret Line="32" Column="47" TopLine="18"/>
       </Position1>
       <Position2>
         <Filename Value="engine.pas"/>
-        <Caret Line="24" Column="25" TopLine="21"/>
+        <Caret Line="104" Column="112" TopLine="80"/>
       </Position2>
       <Position3>
         <Filename Value="engine.pas"/>
-        <Caret Line="39" Column="52" TopLine="19"/>
+        <Caret Line="16" Column="15" TopLine="5"/>
       </Position3>
       <Position4>
         <Filename Value="engine.pas"/>
-        <Caret Line="41" Column="20" TopLine="27"/>
+        <Caret Line="48" Column="53" TopLine="35"/>
       </Position4>
       <Position5>
         <Filename Value="engine.pas"/>
-        <Caret Line="61" Column="7" TopLine="45"/>
+        <Caret Line="44" Column="3" TopLine="33"/>
       </Position5>
       <Position6>
         <Filename Value="engine.pas"/>
-        <Caret Line="18" Column="10" TopLine="7"/>
+        <Caret Line="109" Column="10" TopLine="99"/>
       </Position6>
       <Position7>
-        <Filename Value="engine.pas"/>
-        <Caret Line="63" Column="5" TopLine="59"/>
+        <Filename Value="istandalone.pas"/>
+        <Caret Line="26" Column="12" TopLine="19"/>
       </Position7>
       <Position8>
-        <Filename Value="engine.pas"/>
-        <Caret Line="41" Column="18" TopLine="29"/>
+        <Filename Value="istandalone.pas"/>
+        <Caret Line="60" Column="1" TopLine="39"/>
       </Position8>
       <Position9>
         <Filename Value="engine.pas"/>
-        <Caret Line="88" Column="30" TopLine="69"/>
+        <Caret Line="48" Column="25" TopLine="35"/>
       </Position9>
       <Position10>
         <Filename Value="engine.pas"/>
-        <Caret Line="33" Column="14" TopLine="22"/>
+        <Caret Line="55" Column="14" TopLine="34"/>
       </Position10>
       <Position11>
         <Filename Value="engine.pas"/>
-        <Caret Line="44" Column="34" TopLine="32"/>
+        <Caret Line="51" Column="17" TopLine="43"/>
       </Position11>
       <Position12>
-        <Filename Value="istandalone.pas"/>
-        <Caret Line="48" Column="1" TopLine="37"/>
+        <Filename Value="engine.pas"/>
+        <Caret Line="57" Column="5" TopLine="46"/>
       </Position12>
       <Position13>
-        <Filename Value="istandalone.pas"/>
-        <Caret Line="21" Column="34" TopLine="21"/>
+        <Filename Value="engine.pas"/>
+        <Caret Line="113" Column="1" TopLine="98"/>
       </Position13>
       <Position14>
-        <Filename Value="istandalone.pas"/>
-        <Caret Line="57" Column="1" TopLine="36"/>
+        <Filename Value="engine.pas"/>
+        <Caret Line="50" Column="42" TopLine="39"/>
       </Position14>
       <Position15>
-        <Filename Value="istandalone.pas"/>
-        <Caret Line="56" Column="30" TopLine="36"/>
+        <Filename Value="engine.pas"/>
+        <Caret Line="56" Column="18" TopLine="44"/>
       </Position15>
       <Position16>
-        <Filename Value="istandalone.pas"/>
-        <Caret Line="57" Column="1" TopLine="36"/>
+        <Filename Value="engine.pas"/>
+        <Caret Line="118" Column="32" TopLine="110"/>
       </Position16>
       <Position17>
         <Filename Value="engine.pas"/>
-        <Caret Line="59" Column="43" TopLine="1"/>
+        <Caret Line="55" Column="58" TopLine="43"/>
       </Position17>
-      <Position18>
-        <Filename Value="engine.pas"/>
-        <Caret Line="9" Column="28" TopLine="1"/>
-      </Position18>
-      <Position19>
-        <Filename Value="istandalone.pas"/>
-        <Caret Line="32" Column="47" TopLine="18"/>
-      </Position19>
     </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>

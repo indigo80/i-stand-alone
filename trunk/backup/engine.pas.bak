@@ -10,22 +10,20 @@ uses
   zgl_main,
   zgl_window,
   zgl_screen,
+  zgl_camera_2d,
+  zgl_keyboard,
   zgl_timers,
   zgl_render_target,
   zgl_sprite_2d,
   zgl_textures,
+  zgl_primitives_2d,
   zgl_utils,
   zgl_types,
-  IniFiles;
+  IniFiles,
+  sprite;
 
 const
-  APP_NAME = 'I Stand Alone alpha 0.0.1';
-
-type
-  TProcCall = procedure;
-
-type
-  TUpdateCall = procedure( dt : Double );
+  APP_NAME = 'I Stand Alone [alpha 0.0.1]';
 
   { TEngine class }
 
@@ -45,14 +43,25 @@ type
 
 implementation
 
+var
+  asprite : TSprite;
+  //camMain : zglTCamera2D;
+
 procedure TEngineDraw;
 begin
+  pr2d_Rect( 0, 0, 22, 22, $FFFFFF, 510, PR2D_FILL );
+  //cam2d_Set(@camMain);
+  //tex := tex_LoadFromFile('gfx' + DirectorySeparator + 'ball.png', $FF000000, TEX_DEFAULT_2D);
+  //ssprite2d_Draw(tex, 40, 40, 200, 200, 0, 255);
 
+  ssprite2d_Draw(asprite.texture, asprite.X, asprite.Y, asprite.Width, asprite.Height, asprite.Angle, asprite.Alpha);
+  //asprite2d_Draw(asprite.texture, 0, 0, 128, 128, 0, 1);
 end;
 
 procedure TEngineInit;
 begin
-
+  //cam2d_Init(camMain);
+  asprite.LoadImage('ball.png');
 end;
 
 procedure TEngineUpdate(dt : Double);
@@ -65,6 +74,21 @@ begin
 
 end;
 
+procedure TEngineTimer;
+begin
+  if asprite.Alpha > 0 then
+     asprite.Alpha := asprite.Alpha - 10;
+end;
+
+procedure TEngineKeyboard;
+begin
+  if key_Down(K_UP) Then asprite.Y := asprite.Y - 10;
+  if key_Down(K_DOWN) Then asprite.Y := asprite.Y + 10;
+  if key_Down(K_LEFT) Then asprite.X := asprite.X - 10;
+  if key_Down(K_RIGHT) Then asprite.X := asprite.X + 10;
+  key_ClearState();
+end;
+
 function TEngine._GetFPS: string;
 begin
   Result := u_IntToStr(zgl_Get(RENDER_FPS));
@@ -74,11 +98,13 @@ constructor TEngine.CreateEngine;
 var
   IniFile : TIniFile;
   width, height : Integer;
-  fullscreen : Boolean;
-  vsync : Boolean;
+  fullscreen, vsync : Boolean;
 begin
   _DirApp  := utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_APPLICATION)));
   _DirHome := utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_HOME)));
+
+  timer_Add(@TEngineTimer, 50);
+  timer_Add(@TEngineKeyboard, 60);
 
   zgl_Reg(SYS_LOAD, @TEngineInit);
   zgl_Reg(SYS_DRAW, @TEngineDraw);
@@ -107,13 +133,17 @@ begin
   // Set Options
   scr_SetOptions(width, height, REFRESH_MAXIMUM, fullscreen, vsync);
 
+  // Test
+  asprite := TSprite.Create(_DirApp + 'gfx');
+
+
+
   zgl_Init();
 end;
 
 destructor TEngine.FreeEngine;
 begin
-
-  Self.Free;
+  inherited Destroy;
 end;
 
 

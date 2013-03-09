@@ -6,7 +6,7 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, SysUtils, CustApp, engine
+  Classes, SysUtils, CustApp, engine, sprite
   { you can add units after this };
 
 type
@@ -27,9 +27,15 @@ procedure TISA.DoRun;
 var
   Engine : TEngine;
 begin
+  WriteLn('Engine Initialization...');
 
   { Initialize and Create Engine application }
-  Engine := TEngine.CreateEngine;
+  try
+     Engine := TEngine.CreateEngine;
+  finally
+     Engine.FreeEngine;
+  end;
+
   Terminate;
 end;
 
