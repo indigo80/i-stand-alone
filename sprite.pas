@@ -11,138 +11,67 @@ uses
   zgl_render_target,
   zgl_textures_png,
   zgl_textures_jpg,
-  zgl_sprite_2d;
+  zglSpriteEngine;
 
 type
 
   { TSprite }
 
-  TSprite = class(TObject)
+  TSprite = class(zglCSprite2D)
   private
-    _Width : Integer;
-    _Height : Integer;
-    _X : Integer;
-    _Y : Integer;
-    _Z : Integer;
-    _Angle : Single;
-    _Alpha : Byte;
-    _Visible : Boolean;
-    _tex : zglPTexture;
-    _gfxDir : string;
-    procedure SetAngle(AValue: Single);
-    procedure _SetWidth(Value : Integer);
-    procedure _SetHeight(Value : Integer);
-    procedure _SetX(Value : Integer);
-    procedure _SetY(Value : Integer);
-    procedure _SetZ(Value : Integer);
-    procedure _SetAlpha(Value : Byte);
-    procedure _SetVisible(Value : Boolean);
-    procedure _SetAngle(Value : Single);
+    procedure OnInit( _Texture : zglPTexture; _Layer : Integer ); override;
+    procedure OnDraw; override;
+    procedure OnProc; override;
+    procedure OnFree; override;
   public
-    constructor Create(const gfxDir : string);
+    constructor Create( _Manager : zglCSEngine2D; _ID : Integer ); override;
+    procedure LoadImage(filename: string);
     destructor Free;
-    procedure LoadImage(filename : string);
-    procedure Update;
-    procedure Draw;
-    procedure SetAnimationRect(Rect : TRect; PerLine : Integer);
-    property Width : Integer read _Width write _SetWidth;
-    property Height : Integer read _Height write _SetHeight;
-    property X : Integer read _X write _SetX;
-    property Y : Integer read _Y write _SetY;
-    property Z : Integer read _Z write _SetZ;
-    property Alpha : Byte read _Alpha write _SetAlpha;
-    property Visible : Boolean read _Visible write _SetVisible;
-    property texture : zglPTexture read _tex;
-    property Angle : Single read _Angle write SetAngle;
   end;
 
 implementation
 
 { TSprite }
 
-procedure TSprite._SetWidth(Value: Integer);
+procedure TSprite.LoadImage(filename: string);
 begin
-  if Value > 0 then _Width := Value;
+ WriteLn('Citam: '  + filename);
+ if not FileExists(filename) then
+   WriteLn('[Greska!] - Grafika ''' + filename + ''' ne postoji!')
+ else
+   Texture := tex_LoadFromFile(filename, $FF000000, TEX_DEFAULT_2D);
 end;
 
-procedure TSprite.SetAngle(AValue: Single);
+procedure TSprite.OnInit(_Texture: zglPTexture; _Layer: Integer);
 begin
-  _Angle := AValue;
+  inherited OnInit(_Texture, _Layer);
 end;
 
-procedure TSprite._SetHeight(Value: Integer);
+procedure TSprite.OnDraw;
 begin
-  if Value > 0 then _Height := Value;
+  inherited OnDraw;
 end;
 
-procedure TSprite._SetX(Value: Integer);
+procedure TSprite.OnProc;
 begin
-  _X := Value;
+  inherited OnProc;
 end;
 
-procedure TSprite._SetY(Value: Integer);
+procedure TSprite.OnFree;
 begin
-  _Y := Value;
+  inherited OnFree;
 end;
 
-procedure TSprite._SetZ(Value: Integer);
+constructor TSprite.Create(_Manager: zglCSEngine2D; _ID: Integer);
 begin
-
-end;
-
-procedure TSprite._SetAlpha(Value: Byte);
-begin
-  _Alpha := Value;
-end;
-
-procedure TSprite._SetVisible(Value: Boolean);
-begin
-
-end;
-
-procedure TSprite._SetAngle(Value: Single);
-begin
-  _Angle := Value;
-end;
-
-constructor TSprite.Create(const gfxDir: string);
-begin
-  _gfxDir := gfxDir;
-  _Width := 64;
-  _Height := 64;
-  _X := 40;
-  _Y := 40;
-  _Alpha := 255;
-  _Angle := 0;
+  inherited Create(_Manager, _ID);
+  ID := _Manager.AddSprite();
+  _Manager.List[ID] := Self;
 end;
 
 destructor TSprite.Free;
 begin
-
-end;
-
-procedure TSprite.LoadImage(filename: string);
-begin
- WriteLn('Citam: '  + _gfxDir + DirectorySeparator + filename);
- if not FileExists(_gfxDir + DirectorySeparator + filename) then
-   WriteLn('[Greska!] - Grafika ''' + filename + ''' ne postoji!')
- else
-   _tex := tex_LoadFromFile(_gfxDir + DirectorySeparator + filename, $FF000000, TEX_DEFAULT_2D);
-end;
-
-procedure TSprite.Update;
-begin
-
-end;
-
-procedure TSprite.Draw;
-begin
-     ssprite2d_Draw(_tex, _X, _Y, _Width, _Height, _Angle, _Alpha);
-end;
-
-procedure TSprite.SetAnimationRect(Rect: TRect; PerLine: Integer);
-begin
-
+  inherited Destroy;
 end;
 
 end.
