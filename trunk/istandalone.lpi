@@ -58,7 +58,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="third-party\zengl;third-party\zengl\lib\ogg\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\zip\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\zlib\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\theora\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\msvcrt\$(TargetCPU);third-party\zengl\lib\jpeg\$(TargetCPU)-$(TargetOS)"/>
+      <OtherUnitFiles Value="third-party\zengl;third-party\zengl\lib\ogg\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\zip\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\zlib\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\theora\$(TargetCPU)-$(TargetOS);third-party\zengl\lib\msvcrt\$(TargetCPU);third-party\zengl\lib\jpeg\$(TargetCPU)-$(TargetOS);third-party"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Other>
