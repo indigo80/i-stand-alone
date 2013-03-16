@@ -23,6 +23,8 @@ uses
   IniFiles,
   sprite,
   zglSpriteEngine,
+  scenemap,
+  basescene,
   math;
 
 const
@@ -33,42 +35,49 @@ const
   type
       TEngine = class(TObject)
       private
-        _DirApp : string;
-        _DirHome : string;
         function _GetFPS : string;
       public
         constructor CreateEngine;
         destructor FreeEngine;
         property FPS : string read _GetFPS;
-        property AppDir : string read _DirApp;
-        property HomeDir : string read _DirHome;
       end;
+
+function GetAppDir : string;
+function GetHomeDir : string;
+
+procedure ChangeScene(NewScene : TBaseScene);
 
 implementation
 
 var
-  asprite : TSprite;
-  crosshair : TSprite;
-  sEngine : zglCSEngine2D;
-  //camMain : zglTCamera2D;
+  scene : TBaseScene;
+  chgScene : TBaseScene;
+  DirApp : string;
+  DirHome : string;
 
 procedure TEngineDraw;
 begin
-  sEngine.Draw;
+
+  if (chgScene <> nil) and scene.Running then
+  begin
+    scene.Dispose;
+  end
+  else if (chgScene <> nil) and not scene.Running then
+  begin
+    scene.Free;
+    scene := chgScene;
+    scene.Init;
+    scene.Running := True;
+  end;
+
+  if not scene.Freeze then scene.Draw;
 end;
 
 procedure TEngineInit;
-var
-  ID : Integer;
-  _DirApp : string;
 begin
-   _DirApp  := utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_APPLICATION)));
-  asprite.LoadImage(_DirApp + 'gfx\soldier.png');
-  crosshair.LoadImage(_DirApp + 'gfx\crosshair.png');
-  asprite.W := 64;
-  asprite.H := 64;
-  crosshair.W := 36;
-  crosshair.H := 36;
+  scene := TSceneMap.Create;
+  scene.Init;
+  scene.Running := True;
 end;
 
 procedure TEngineUpdate(dt : Double);
@@ -87,20 +96,27 @@ end;
 
 procedure TEngineKeyboard;
 begin
-  if key_Down(K_UP) Then asprite.Y := asprite.Y - 5;
-  if key_Down(K_DOWN) Then asprite.Y := asprite.Y + 5;
-  if key_Down(K_LEFT) Then asprite.X := asprite.X - 5;
-  if key_Down(K_RIGHT) Then asprite.X := asprite.X + 5;
-  key_ClearState();
+  scene.KeyboardInput;
 end;
 
 procedure TEngineMouse;
 begin
-  { Postavljanje ugla rotacije prema misu }
-  asprite.Angle := arctan2(mouseY - asprite.Y - asprite.W / 2,
-                           mouseX - asprite.X - asprite.H / 2) * 180 / pi + 90;
-  crosshair.X := mouseX - crosshair.W / 2;
-  crosshair.Y := mouseY - crosshair.H / 2;
+  scene.MouseInput;
+end;
+
+function GetAppDir: string;
+begin
+  Result := DirApp;
+end;
+
+function GetHomeDir: string;
+begin
+  Result := DirHome;
+end;
+
+procedure ChangeScene(NewScene: TBaseScene);
+begin
+  chgScene := NewScene;
 end;
 
 function TEngine._GetFPS: string;
@@ -114,8 +130,8 @@ var
   width, height, ID : Integer;
   fullscreen, vsync : Boolean;
 begin
-  _DirApp  := utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_APPLICATION)));
-  _DirHome := utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_HOME)));
+  DirApp  := utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_APPLICATION)));
+  DirHome := utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_HOME)));
 
   timer_Add(@TEngineTimer, 50);
   timer_Add(@TEngineKeyboard, 10);
@@ -135,7 +151,7 @@ begin
   fullscreen := False;
   vsync := False;
 
-  IniFile := TIniFile.Create(_DirApp + DirectorySeparator + 'config.ini');
+  IniFile := TIniFile.Create(DirApp + DirectorySeparator + 'config.ini');
   try
     width := IniFile.ReadInteger('Main', 'width', 800);
     height := IniFile.ReadInteger('Main', 'height', 600);
@@ -148,13 +164,7 @@ begin
   // Set Options
   scr_SetOptions(width, height, REFRESH_MAXIMUM, fullscreen, vsync);
 
-  sEngine := zglCSEngine2D.Create;
-
-
   // Test
-  asprite := TSprite.Create(sEngine, 0);
-  crosshair := TSprite.Create(sEngine, 0);
-
   zgl_Init();
 end;
 

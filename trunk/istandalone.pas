@@ -6,7 +6,7 @@ uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}{$ENDIF}
-  Classes, SysUtils, CustApp, engine, sprite
+  Classes, SysUtils, CustApp, engine, sprite, scenemap, basescene
   { you can add units after this };
 
 type
