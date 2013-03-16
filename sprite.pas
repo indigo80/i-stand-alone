@@ -10,7 +10,8 @@ uses
   zgl_textures,
   zgl_render_target,
   zgl_textures_png,
-  zgl_textures_jpg;
+  zgl_textures_jpg,
+  zgl_sprite_2d;
 
 type
 
@@ -42,6 +43,7 @@ type
     destructor Free;
     procedure LoadImage(filename : string);
     procedure Update;
+    procedure Draw;
     procedure SetAnimationRect(Rect : TRect; PerLine : Integer);
     property Width : Integer read _Width write _SetWidth;
     property Height : Integer read _Height write _SetHeight;
@@ -60,18 +62,17 @@ implementation
 
 procedure TSprite._SetWidth(Value: Integer);
 begin
-
+  if Value > 0 then _Width := Value;
 end;
 
 procedure TSprite.SetAngle(AValue: Single);
 begin
-  if _Angle= AValue then Exit;
   _Angle := AValue;
 end;
 
 procedure TSprite._SetHeight(Value: Integer);
 begin
-
+  if Value > 0 then _Height := Value;
 end;
 
 procedure TSprite._SetX(Value: Integer);
@@ -107,8 +108,8 @@ end;
 constructor TSprite.Create(const gfxDir: string);
 begin
   _gfxDir := gfxDir;
-  _Width := 128;
-  _Height := 128;
+  _Width := 64;
+  _Height := 64;
   _X := 40;
   _Y := 40;
   _Alpha := 255;
@@ -132,6 +133,11 @@ end;
 procedure TSprite.Update;
 begin
 
+end;
+
+procedure TSprite.Draw;
+begin
+     ssprite2d_Draw(_tex, _X, _Y, _Width, _Height, _Angle, _Alpha);
 end;
 
 procedure TSprite.SetAnimationRect(Rect: TRect; PerLine: Integer);
