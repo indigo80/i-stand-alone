@@ -9,12 +9,11 @@
         <Filename Value="istandalone.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="istandalone"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="40" Y="11"/>
-        <UsageCount Value="80"/>
+        <UsageCount Value="82"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,9 +22,9 @@
         <UnitName Value="engine"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="146"/>
-        <CursorPos X="24" Y="172"/>
-        <UsageCount Value="80"/>
+        <TopLine Value="135"/>
+        <CursorPos X="5" Y="145"/>
+        <UsageCount Value="82"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
@@ -34,9 +33,9 @@
         <UnitName Value="sprite"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="16"/>
+        <TopLine Value="29"/>
         <CursorPos X="69" Y="42"/>
-        <UsageCount Value="80"/>
+        <UsageCount Value="82"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -45,9 +44,9 @@
         <UnitName Value="scenemap"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="16"/>
-        <CursorPos X="10" Y="20"/>
-        <UsageCount Value="71"/>
+        <TopLine Value="53"/>
+        <CursorPos X="13" Y="69"/>
+        <UsageCount Value="73"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -58,18 +57,19 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="23" Y="26"/>
-        <UsageCount Value="71"/>
+        <UsageCount Value="73"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="player.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="player"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="38"/>
-        <CursorPos X="48" Y="45"/>
-        <UsageCount Value="69"/>
+        <TopLine Value="26"/>
+        <CursorPos X="34" Y="145"/>
+        <UsageCount Value="71"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -78,9 +78,9 @@
         <UnitName Value="weapon"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="34" Y="10"/>
-        <UsageCount Value="69"/>
+        <TopLine Value="10"/>
+        <CursorPos X="39" Y="19"/>
+        <UsageCount Value="71"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -89,9 +89,9 @@
         <UnitName Value="ourTypes"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="5"/>
         <CursorPos X="34" Y="13"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -172,126 +172,125 @@
     </General>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="scenemap.pas"/>
-        <Caret Line="98" Column="5" TopLine="68"/>
+        <Filename Value="player.pas"/>
+        <Caret Line="100" Column="35" TopLine="92"/>
       </Position1>
       <Position2>
-        <Filename Value="scenemap.pas"/>
-        <Caret Line="95" Column="63" TopLine="71"/>
+        <Filename Value="player.pas"/>
+        <Caret Line="98" Column="49" TopLine="84"/>
       </Position2>
       <Position3>
-        <Filename Value="scenemap.pas"/>
-        <Caret Line="51" Column="6" TopLine="34"/>
+        <Filename Value="player.pas"/>
+        <Caret Line="42" Column="25" TopLine="32"/>
       </Position3>
       <Position4>
-        <Filename Value="player.pas"/>
-        <Caret Line="92" Column="54" TopLine="73"/>
+        <Filename Value="scenemap.pas"/>
+        <Caret Line="51" Column="6" TopLine="34"/>
       </Position4>
       <Position5>
-        <Filename Value="player.pas"/>
-        <Caret Line="94" Column="27" TopLine="88"/>
+        <Filename Value="scenemap.pas"/>
+        <Caret Line="80" Column="19" TopLine="52"/>
       </Position5>
       <Position6>
-        <Filename Value="player.pas"/>
-        <Caret Line="98" Column="31" TopLine="88"/>
+        <Filename Value="scenemap.pas"/>
+        <Caret Line="79" Column="36" TopLine="52"/>
       </Position6>
       <Position7>
-        <Filename Value="player.pas"/>
-        <Caret Line="101" Column="24" TopLine="88"/>
+        <Filename Value="weapon.pas"/>
+        <Caret Line="10" Column="34" TopLine="1"/>
       </Position7>
       <Position8>
         <Filename Value="player.pas"/>
-        <Caret Line="56" Column="3" TopLine="39"/>
+        <Caret Line="52" Column="42" TopLine="27"/>
       </Position8>
       <Position9>
         <Filename Value="player.pas"/>
-        <Caret Line="100" Column="35" TopLine="92"/>
+        <Caret Line="100" Column="41" TopLine="81"/>
       </Position9>
       <Position10>
         <Filename Value="player.pas"/>
-        <Caret Line="98" Column="49" TopLine="84"/>
+        <Caret Line="98" Column="1" TopLine="81"/>
       </Position10>
       <Position11>
-        <Filename Value="player.pas"/>
-        <Caret Line="42" Column="25" TopLine="32"/>
+        <Filename Value="engine.pas"/>
+        <Caret Line="172" Column="24" TopLine="146"/>
       </Position11>
       <Position12>
-        <Filename Value="scenemap.pas"/>
-        <Caret Line="51" Column="6" TopLine="34"/>
+        <Filename Value="player.pas"/>
+        <Caret Line="96" Column="53" TopLine="81"/>
       </Position12>
       <Position13>
-        <Filename Value="scenemap.pas"/>
-        <Caret Line="80" Column="19" TopLine="52"/>
+        <Filename Value="player.pas"/>
+        <Caret Line="94" Column="19" TopLine="77"/>
       </Position13>
       <Position14>
-        <Filename Value="scenemap.pas"/>
-        <Caret Line="79" Column="36" TopLine="52"/>
+        <Filename Value="player.pas"/>
+        <Caret Line="98" Column="35" TopLine="81"/>
       </Position14>
       <Position15>
-        <Filename Value="weapon.pas"/>
-        <Caret Line="10" Column="34" TopLine="1"/>
+        <Filename Value="player.pas"/>
+        <Caret Line="97" Column="35" TopLine="80"/>
       </Position15>
       <Position16>
         <Filename Value="player.pas"/>
-        <Caret Line="52" Column="42" TopLine="27"/>
+        <Caret Line="42" Column="41" TopLine="20"/>
       </Position16>
       <Position17>
         <Filename Value="player.pas"/>
-        <Caret Line="100" Column="41" TopLine="81"/>
+        <Caret Line="59" Column="19" TopLine="40"/>
       </Position17>
       <Position18>
-        <Filename Value="player.pas"/>
-        <Caret Line="98" Column="1" TopLine="81"/>
+        <Filename Value="scenemap.pas"/>
+        <Caret Line="20" Column="10" TopLine="16"/>
       </Position18>
       <Position19>
-        <Filename Value="engine.pas"/>
-        <Caret Line="172" Column="24" TopLine="146"/>
+        <Filename Value="player.pas"/>
+        <Caret Line="106" Column="97" TopLine="81"/>
       </Position19>
       <Position20>
         <Filename Value="player.pas"/>
-        <Caret Line="96" Column="53" TopLine="81"/>
+        <Caret Line="102" Column="51" TopLine="85"/>
       </Position20>
       <Position21>
         <Filename Value="player.pas"/>
-        <Caret Line="94" Column="19" TopLine="77"/>
+        <Caret Line="57" Column="44" TopLine="39"/>
       </Position21>
       <Position22>
         <Filename Value="player.pas"/>
-        <Caret Line="98" Column="35" TopLine="81"/>
+        <Caret Line="98" Column="27" TopLine="82"/>
       </Position22>
       <Position23>
-        <Filename Value="player.pas"/>
-        <Caret Line="97" Column="35" TopLine="80"/>
+        <Filename Value="scenemap.pas"/>
+        <Caret Line="76" Column="18" TopLine="60"/>
       </Position23>
       <Position24>
         <Filename Value="player.pas"/>
-        <Caret Line="42" Column="41" TopLine="20"/>
+        <Caret Line="103" Column="34" TopLine="91"/>
       </Position24>
       <Position25>
         <Filename Value="player.pas"/>
-        <Caret Line="59" Column="19" TopLine="40"/>
+        <Caret Line="56" Column="10" TopLine="45"/>
       </Position25>
       <Position26>
-        <Filename Value="scenemap.pas"/>
-        <Caret Line="20" Column="10" TopLine="16"/>
+        <Filename Value="player.pas"/>
+        <Caret Line="46" Column="19" TopLine="34"/>
       </Position26>
       <Position27>
         <Filename Value="player.pas"/>
-        <Caret Line="106" Column="97" TopLine="81"/>
+        <Caret Line="100" Column="24" TopLine="85"/>
       </Position27>
       <Position28>
         <Filename Value="player.pas"/>
-        <Caret Line="102" Column="51" TopLine="85"/>
+        <Caret Line="45" Column="20" TopLine="20"/>
       </Position28>
       <Position29>
         <Filename Value="player.pas"/>
-        <Caret Line="57" Column="44" TopLine="39"/>
+        <Caret Line="42" Column="19" TopLine="33"/>
       </Position29>
       <Position30>
         <Filename Value="player.pas"/>
-        <Caret Line="98" Column="27" TopLine="82"/>
+        <Caret Line="138" Column="54" TopLine="120"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
-  <EditorMacros Count="0"/>
 </CONFIG>
