@@ -5,7 +5,7 @@ unit scenemap;
 interface
 
 uses
-  Classes, SysUtils, sprite, zglSpriteEngine, basescene, zgl_keyboard, math, zgl_mouse;
+  Classes, SysUtils, sprite, zglSpriteEngine, basescene, zgl_keyboard, math, zgl_mouse, player;
 
 type
 
@@ -13,6 +13,7 @@ type
 
   TSceneMap = class(TBaseScene)
     asprite, crosshair : TSprite;
+    player:TPlayer;
   public
     procedure Init; override;
     procedure Main; override;
@@ -31,25 +32,21 @@ uses
 
 procedure TSceneMap.Init;
 begin
-  asprite := TSprite.Create(SpriteEngine, 0);
-  crosshair := TSprite.Create(SpriteEngine, 0);
-  asprite.LoadImage(GetAppDir + 'gfx\soldier.png');
-  crosshair.LoadImage(GetAppDir + 'gfx\crosshair.png');
-  asprite.W := 64;
-  asprite.H := 64;
-  crosshair.W := 36;
-  crosshair.H := 36;
+  player:= TPlayer.Create(SpriteEngine, 0);
   Main;
 end;
 
 procedure TSceneMap.Main;
 begin
   Freeze := False;
+
 end;
 
 procedure TSceneMap.Draw;
 begin
+  Player.Update;
  SpriteEngine.Draw;
+
 end;
 
 procedure TSceneMap.Dispose;
@@ -59,20 +56,18 @@ end;
 
 procedure TSceneMap.KeyboardInput;
 begin
-  if key_Down(K_UP) Then asprite.Y := asprite.Y - 5;
-  if key_Down(K_DOWN) Then asprite.Y := asprite.Y + 5;
-  if key_Down(K_LEFT) Then asprite.X := asprite.X - 5;
-  if key_Down(K_RIGHT) Then asprite.X := asprite.X + 5;
+  if key_Down(K_UP) Then player.MoveForward();
+  if key_Down(K_DOWN) Then player.MoveBackwards();
+  if key_Down(K_LEFT) Then player.MoveLeft();
+  if key_Down(K_RIGHT) Then player.MoveRight();
   key_ClearState();
 end;
 
 procedure TSceneMap.MouseInput;
 begin
-  { Postavljanje ugla rotacije prema misu }
-  asprite.Angle := arctan2(mouseY - asprite.Y - asprite.W / 2,
-                           mouseX - asprite.X - asprite.H / 2) * 180 / pi + 90;
-  crosshair.X := mouseX - crosshair.W / 2;
-  crosshair.Y := mouseY - crosshair.H / 2;
+  player.SetAngle(mouseX, mouseY);
+  if mouseDown[0] then player.Fire;
+  mouse_ClearState;
 end;
 
 end.

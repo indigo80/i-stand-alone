@@ -5,30 +5,15 @@ unit scenemap;
 interface
 
 uses
-  Classes,
-  zgl_sprite_2d,
-  zgl_primitives_2d,
-  zgl_font,
-  zgl_text,
-  zgl_math_2d,
-  zgl_utils,
-  zgl_keyboard,
-  zglSpriteEngine,
-  zgl_mouse,
-  SysUtils,
-  math,
-  player,
-  sprite,
-  basescene;
-
-
+  Classes, SysUtils, sprite, zglSpriteEngine, basescene, zgl_keyboard, math, zgl_mouse, player;
 
 type
 
   { TSceneMap }
 
   TSceneMap = class(TBaseScene)
-    player: TPlayer;
+    asprite, crosshair : TSprite;
+    player:TPlayer;
   public
     procedure Init; override;
     procedure Main; override;
@@ -47,18 +32,21 @@ uses
 
 procedure TSceneMap.Init;
 begin
-  player.Create(SpriteEngine, 0);
+  player:= TPlayer.Create(SpriteEngine, 0);
   Main;
 end;
 
 procedure TSceneMap.Main;
 begin
   Freeze := False;
+
 end;
 
 procedure TSceneMap.Draw;
 begin
+  Player.Update;
  SpriteEngine.Draw;
+
 end;
 
 procedure TSceneMap.Dispose;
@@ -78,7 +66,8 @@ end;
 procedure TSceneMap.MouseInput;
 begin
   player.SetAngle(mouseX, mouseY);
-  player.SetCrosshair();
+  if mouseClick[0] then player.Fire;
+  mouse_ClearState;
 end;
 
 end.

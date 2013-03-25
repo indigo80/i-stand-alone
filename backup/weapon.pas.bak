@@ -7,9 +7,6 @@ interface
 uses
   Classes, SysUtils, sprite;
 type
-
-  { TSprite }
-
   { TWeapon }
 
   TWeapon = class
@@ -22,9 +19,8 @@ type
     procedure Fire(_Angle: Single);
   end;
 
-implementation
 
-{ TWeapon }
+implementation
 
 procedure TWeapon.Fire(_Angle: Single);
 begin
