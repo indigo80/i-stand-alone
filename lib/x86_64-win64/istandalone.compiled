@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\2.6.0\bin\x86_64-win64\fpc.exe" Date="1113007516"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -vewnhi -FiC:\Users\Igor\Desktop\STC\i-stand-alone\lib\x86_64-win64 -FuC:\Users\Igor\Desktop\STC\i-stand-alone\third-party\zengl -FuC:\Users\Igor\Desktop\STC\i-stand-alone\third-party\zengl\lib\ogg\x86_64-win64 -FuC:\Users\Igor\Desktop\STC\i-stand-alone\third-party\zengl\lib\zip\x86_64-win64 -FuC:\Users\Igor\Desktop\STC\i-stand-alone\third-party\zengl\lib\zlib\x86_64-win64 -FuC:\Users\Igor\Desktop\STC\i-stand-alone\third-party\zengl\lib\theora\x86_64-win64 -FuC:\Users\Igor\Desktop\STC\i-stand-alone\third-party\zengl\lib\msvcrt\x86_64 -FuC:\Users\Igor\Desktop\STC\i-stand-alone\third-party\zengl\lib\jpeg\x86_64-win64 -FuC:\Users\Igor\Desktop\STC\i-stand-alone\third-party -FuC:\Users\Igor\Desktop\STC\i-stand-alone\ -FUC:\Users\Igor\Desktop\STC\i-stand-alone\lib\x86_64-win64\ -l istandalone.pas"/>
+</CONFIG>
