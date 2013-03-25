@@ -65,6 +65,7 @@ end;
 constructor TSprite.Create(_Manager: zglCSEngine2D; _ID: Integer);
 begin
   inherited Create(_Manager, _ID);
+  ID := _Manager.AddSprite();
   _Manager.List[ID] := Self;
 end;
 

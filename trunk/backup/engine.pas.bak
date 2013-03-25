@@ -62,7 +62,7 @@ begin
   begin
     scene.Dispose;
   end
-  else
+  else if (chgScene <> nil) and not scene.Running then
   begin
     scene.Free;
     scene := chgScene;
