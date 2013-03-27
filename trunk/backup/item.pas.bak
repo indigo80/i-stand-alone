@@ -1,0 +1,29 @@
+unit item;
+
+{$mode objfpc}{$H+}
+
+interface
+
+type
+  { TItem }
+
+  TItem = class abstract
+  private
+  protected
+    procedure Use(); virtual; abstract;
+  public
+    inventoryId :Integer;
+    weight: Single;
+    procedure Use(); virtual; abstract;
+  end;
+
+
+
+
+implementation
+{ TItem }
+
+end.
+
+
+

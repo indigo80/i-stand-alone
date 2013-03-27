@@ -5,26 +5,46 @@ unit weapon;
 interface
 
 uses
-  Classes, SysUtils, sprite;
+  Classes, SysUtils, sprite, item;
 type
   { TWeapon }
 
-  TWeapon = class
+  TWeapon = class (TItem)
   private
-
+  protected
+    procedure Use();override;
   public
+
     damage, amunition :Integer;
     precision, range, speed, rechargeTime, splashRadius : Single;
     sprite, bullet : TSprite;
-    procedure Fire(_Angle: Single);
+    constructor Create; virtual; abstract;
+    procedure Fire(_Angle: Single); virtual; abstract;
+  end;
+
+  type
+
+  { TGun }
+
+  TGun = class (TWeapon)
+  private
+  public
+    procedure Fire(_Angle: Single); override;
   end;
 
 
 implementation
 
-procedure TWeapon.Fire(_Angle: Single);
+{ TGun }
+
+procedure TGun.Fire(_Angle: Single);
 begin
 
+end;
+
+procedure TWeapon.Use;
+begin
+  Fire(200);
 end;
 
 end.

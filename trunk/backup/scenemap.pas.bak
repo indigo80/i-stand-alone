@@ -5,7 +5,7 @@ unit scenemap;
 interface
 
 uses
-  Classes, SysUtils, sprite, zglSpriteEngine, basescene, zgl_keyboard, math, zgl_mouse, player;
+  Classes, SysUtils, sprite, zglSpriteEngine, basescene, zgl_keyboard, math, zgl_mouse, player, resources;
 
 type
 
@@ -32,6 +32,7 @@ uses
 
 procedure TSceneMap.Init;
 begin
+  treso
   player:= TPlayer.Create(SpriteEngine, 0);
   Main;
 end;
@@ -66,7 +67,7 @@ end;
 procedure TSceneMap.MouseInput;
 begin
   player.SetAngle(mouseX, mouseY);
-  if mouseClick[0] then player.Fire;
+  if mouseDown[0] then player.Fire;
   mouse_ClearState;
 end;
 
