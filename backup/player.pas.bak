@@ -11,6 +11,7 @@ uses
  zgl_main,
  zgl_utils,
  zglSpriteEngine,
+ resources,
  sprite,
  basescene,
  weapon;
@@ -24,7 +25,7 @@ type
     function Collision : Boolean;
 
   public
-    sprite, crosshair, healthBar, bullet: TSprite;
+    sprite, crosshair, healthBar, bullet: zglCSprite2D;
     health:Single;
     weight: Single;
     speed: Single;
@@ -50,12 +51,17 @@ implementation
 
 constructor TPlayer.Create(_Manager: zglCSEngine2D; _ID: Integer);
 begin
+
   sprite := TSprite.Create(_Manager, 0);
   crosshair := TSprite.Create(_Manager, 0);
-  sprite.LoadImage(utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_APPLICATION))) + 'gfx\soldier.png');
-  crosshair.LoadImage( utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_APPLICATION))) + 'gfx\crosshair.png');
   bullet := TSprite.Create(_Manager, 0);
-  bullet.LoadImage( utf8_Copy(PAnsiChar(zgl_Get(DIRECTORY_APPLICATION))) + 'gfx\bullet.png');
+
+  sprite.Texture:=TResources.playerTexture;
+  crosshair.Texture:=TResources.crosshairTexture;
+  bullet.Texture:=TResources.bulletTexture;
+
+  currentWeapon:=TWeapon.Create();
+
   bullet.W := 32;
   bullet.H := 32;
   bullet.Alpha:= 0;
@@ -136,8 +142,8 @@ end;
 procedure TPlayer.Update;
 begin
   if fireb then begin
-    bullet.X := bullet.X + 0.01 * cos((sprite.Angle-90)*pi/180);
-    bullet.Y := bullet.Y + 0.01 * sin((sprite.Angle-90)*pi/180);
+    bullet.X := bullet.X + 0.2 * cos((sprite.Angle-90)*pi/180);
+    bullet.Y := bullet.Y + 0.2 * sin((sprite.Angle-90)*pi/180);
 
     if ((bullet.X > 800) or (bullet.X < 0)) or ((bullet.Y > 600) or (bullet.X < 0)) then begin
      fireb := false;

@@ -1,0 +1,19 @@
+unit shot;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, zgl_math_2d;
+type
+
+ TShot = class
+ private
+ public
+   position: zglTPoint2D;
+ end;
+implementation
+
+end.
+

@@ -5,7 +5,7 @@ unit scenemap;
 interface
 
 uses
-  Classes, SysUtils, sprite, zglSpriteEngine, basescene, zgl_keyboard, math, zgl_mouse, player;
+  Classes, SysUtils, sprite, zglSpriteEngine, basescene, zgl_keyboard, math, zgl_mouse, player, resources;
 
 type
 
@@ -32,6 +32,7 @@ uses
 
 procedure TSceneMap.Init;
 begin
+  TResources.Create();
   player:= TPlayer.Create(SpriteEngine, 0);
   Main;
 end;

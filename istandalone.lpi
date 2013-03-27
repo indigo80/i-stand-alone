@@ -32,7 +32,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="8">
+    <Units Count="10">
       <Unit0>
         <Filename Value="istandalone.pas"/>
         <IsPartOfProject Value="True"/>
@@ -73,6 +73,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="ourTypes"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="resources.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="resources"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="shot.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="shot"/>
+      </Unit9>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
